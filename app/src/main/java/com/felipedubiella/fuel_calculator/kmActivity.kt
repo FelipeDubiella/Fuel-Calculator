@@ -8,42 +8,43 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.felipedubiella.fuel_calculator.databinding.ActivityConsumptionBinding
-import com.felipedubiella.fuel_calculator.databinding.ActivityFuelBinding
+import com.felipedubiella.fuel_calculator.databinding.ActivityKmBinding
 
-class consumptionActivity : AppCompatActivity() {
-    private val binding by lazy { ActivityConsumptionBinding.inflate(layoutInflater) }
+class kmActivity : AppCompatActivity() {
+    private val binding by lazy { ActivityKmBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(binding.root)
+
 
         with(binding) {
 
 
             btnNext.setOnClickListener {
 
-
                 val bundle = intent.extras
-                if (bundle != null){
+                if (bundle != null) {
+
 
                     val fuelPrice = bundle.getFloat("fuelPrice")
-                    val consumption: String = edtConsumption.text.toString()
+                    val consumption = bundle.getFloat("consumption")
+                    val km: String = edtKm.text.toString()
 
-                    val intent = Intent(this@consumptionActivity, kmActivity::class.java)
+                    val intent = Intent(this@kmActivity, resultActivity::class.java)
 
-                    if (consumption.isNotEmpty()) {
+                    if (km.isNotEmpty()) {
+                        intent.putExtra("km", km.toFloat())
                         intent.putExtra("consumption", consumption.toFloat())
                         intent.putExtra("fuelPrice", fuelPrice.toFloat())
                         startActivity(intent)
                     } else {
                         Toast.makeText(
-                            this@consumptionActivity,
+                            this@kmActivity,
                             "Fill the text field to continue",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
-
-
                 }
 
 
@@ -52,7 +53,5 @@ class consumptionActivity : AppCompatActivity() {
 
         }
 
-
     }
 }
-
