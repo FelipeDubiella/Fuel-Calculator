@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".consumptionActivity">
+    tools:context=".kmActivity">
 
     <Button
         android:id="@+id/btnNext"
@@ -30,10 +30,11 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtConsumption"
+            android:id="@+id/edtKm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="hint"
             android:inputType="numberDecimal"/>
+
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
