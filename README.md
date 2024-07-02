@@ -1,4 +1,4 @@
-# Fuel Calculator App developed in Kotlin.
+# Fuel Calculator App developed in Kotlin
 
 # Description
 The fuel calculator app helps users calculate fuel efficiency and costs for their vehicles. It takes inputs such as distance traveled, fuel consumed, and fuel price per liter (or gallon) to provide the following outputs:
