@@ -1,5 +1,6 @@
 package com.felipedubiella.fuel_calculator
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -29,9 +30,13 @@ class resultActivity : AppCompatActivity() {
                 tvKm.text = "$km"
                 tvConsumption.text = "$consumption"
                 tvPrice.text = "$fuelPrice"
-                tvResult.text = "$result"
+                tvResult.text = "$ $result"
 
+                btnNew.setOnClickListener {
 
+                    val intent = Intent(this@resultActivity, MainActivity::class.java)
+                    startActivity(intent)
+                }
 
             }
         }
